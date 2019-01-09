@@ -1,8 +1,8 @@
 module.exports = {
     entry: {
-        app: "./src/index.tsx",
-        vender: 'babel-polyfill'
+        app: "./src/index.tsx"
     },
+    mode: 'development',
     output: {
         filename: "[name].js",
         path: __dirname + "/dist"
@@ -21,21 +21,20 @@ module.exports = {
                 enforce: "pre",
                 test: /\.js$/,
                 use: [
-                    "source-map-loader",
-                    {
-                        loader: 'es3ify-loader'
-                    }
+
+                     'es3ify-loader'
+
                 ],
             },
-            {
-                test: /\.js$/,
-                use: [
-                    'babel-loader',
-                    {
-                        loader: 'es3ify-loader'
-                    }
-                ]
-            }
+            // {
+            //     test: /\.js$/,
+            //     use: [
+            //         'babel-loader',
+            //         {
+            //             loader: 'es3ify-loader'
+            //         }
+            //     ]
+            // }
         ]
     }
 }

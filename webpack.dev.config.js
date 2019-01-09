@@ -9,7 +9,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         clientLogLevel: 'warning',
         hot: true,
         compress: true,
-        host: '0.0.0.0',
+        host: '127.0.0.1',
         port: '8088',
     }
 })
