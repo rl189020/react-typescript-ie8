@@ -1,7 +1,10 @@
 module.exports = {
-    entry: "./src/index.tsx",
+    entry: {
+        app: "./src/index.tsx",
+        vender: 'babel-polyfill'
+    },
     output: {
-        filename: "bundle.js",
+        filename: "[name].js",
         path: __dirname + "/dist"
     },
     devtool: "source-map",
@@ -17,11 +20,21 @@ module.exports = {
             {
                 enforce: "pre",
                 test: /\.js$/,
-                loader: "source-map-loader"
+                use: [
+                    "source-map-loader",
+                    {
+                        loader: 'es3ify-loader'
+                    }
+                ],
             },
             {
                 test: /\.js$/,
-                loader: 'babel-loader'
+                use: [
+                    'babel-loader',
+                    {
+                        loader: 'es3ify-loader'
+                    }
+                ]
             }
         ]
     }
