@@ -7,6 +7,8 @@ import 'react-router-redux';
 import 'axios';
 import 'js-cookie';
 //import 'lodash';
+import 'mobx-react';
+import 'mobx-state-tree';
 import { Hello } from "./components/Hello";
 
 ReactDOM.render(
